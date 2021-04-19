@@ -6,6 +6,7 @@
 #' @param sigma Scale parameter.
 #' @param delta Second location parameter.
 #' @return Vector.
+#' @import bgumbel
 #' @examples
 #' dbgev(x = 2, csi = 0, mu = 1, sigma = 1, delta = 1)
 #' curve(dbgev(x, csi = 0, mu = 1, sigma = 1, delta = 1), xlim = c(-5, 10), ylim= c(0, .4))
