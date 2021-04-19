@@ -1,4 +1,4 @@
-#' Bimodal Generalized Extreme Value: Density Function
+#' Generalized Extreme Value: Density Function
 #'
 #' @param x Domain.
 #' @param csi Shape parameter.
@@ -6,12 +6,12 @@
 #' @param sigma Scale parameter.
 #' @return Vector.
 #' @examples
-#' dbgev(x = 2, csi = 0, mu = 1, sigma = 1)
-#' curve(dbgev(x, csi = 0, mu = 1, sigma = 1), xlim = c(-5, 10), ylim= c(0, .4))
-#' integrate(dbgev, csi = 0, mu = 1, sigma = 1, lower = -5, upper = 0)
+#' dgev(x = 2, csi = 0, mu = 1, sigma = 1)
+#' curve(dgev(x, csi = 0, mu = 1, sigma = 1), xlim = c(-5, 10), ylim= c(0, .4))
+#' integrate(dgev, csi = 0, mu = 1, sigma = 1, lower = -5, upper = 0)
 #' @export
 
-dbgev <- function(x, csi, mu, sigma) {
+dgev <- function(x, csi, mu, sigma) {
   if (csi == 0) {
     fdp <- (1 / sigma) * exp(-(x - mu) / sigma - exp(-(x - mu) / sigma))
   } else {
@@ -21,4 +21,4 @@ dbgev <- function(x, csi, mu, sigma) {
   return(fdp)
 }
 
-dbgev <- Vectorize(dbgev, 'x')
+dgev <- Vectorize(dgev, 'x')
