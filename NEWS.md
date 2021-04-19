@@ -1,3 +1,4 @@
-# bgev 0.1.0
+# bgev 0.0.1
 
-* Added a `NEWS.md` file to track changes to the package.
+Bimodal Generalized Extreme Value Distribution. 
+General functions for performing extreme value analysis.

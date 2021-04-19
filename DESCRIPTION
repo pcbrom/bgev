@@ -17,7 +17,7 @@ Authors@R:
            family = "S. Paiva",
            role = c("aut", "cre", "cph"),
            email = "bianca.unb@gmail.com",
-           comment = c(ORCID = "https://orcid.org/", Lattes = "http://lattes.cnpq.br/")),
+           comment = c(ORCID = "0000-0003-4657-474X", Lattes = "http://lattes.cnpq.br/4787768063927572")),
     person(given = "Cira",
            family = "E. G. Otiniano",
            role = c("aut", "cph"),
