@@ -59,8 +59,6 @@ library(bgev)
 
 ## Quantile Function
 
-It is recommended to set up a pbgev graph to see the starting and ending range of the desired quantile.
-
 ``` r
 
 ```
