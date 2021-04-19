@@ -1,12 +1,31 @@
 Package: bgev
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Title: Bimodal Generalized Extreme Value Distribution
+Version: 0.0.1
+Authors@R:
+  c(person(given = "Adolfo",
+           family = "M. D. Silva",
+           role = c("aut", "cph"),
+           email = "adolfomanoel@hotmail.com",
+           comment = c(ORCID = "https://orcid.org/0000-0001-7505-1249", Lattes = "http://lattes.cnpq.br/6290999628800754")),
+    person(given = "Pedro",
+           family = "C. Brom",
+           role = c("aut", "cre", "cph"),
+           email = "pcbrom@gmail.com",
+           comment = c(ORCID = "https://orcid.org/0000-0002-1288-7695", Lattes = "http://lattes.cnpq.br/0154064396756002")),
+    person(given = "Bianca",
+           family = "S. Paiva",
+           role = c("aut", "cre", "cph"),
+           email = "bianca.unb@gmail.com",
+           comment = c(ORCID = "https://orcid.org/", Lattes = "http://lattes.cnpq.br/")),
+    person(given = "Cira",
+           family = "E. G. Otiniano",
+           role = c("aut", "cph"),
+           email = "ciragotiniano@gmail.com",
+           comment = c(ORCID = "https://orcid.org/0000-0002-5619-0478", Lattes = "http://lattes.cnpq.br/0307717595727716")))
+Description: Bimodal Generalized Extreme Value Distribution. General functions for performing extreme value analysis.
+Maintainer: The package maintainer <pcbrom@gmail.com>
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 RoxygenNote: 7.1.1
