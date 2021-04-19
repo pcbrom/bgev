@@ -9,7 +9,7 @@
 #' @importFrom bgumbel dbgumbel
 #' @examples
 #' dbgev(x = 2, csi = 0, mu = 1, sigma = 1, delta = 1)
-#' curve(dbgev(x, csi = 0, mu = 1, sigma = 1, delta = 1), xlim = c(-5, 10))
+#' curve(dbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
 #' integrate(dbgev, csi = 0, mu = 1, sigma = 1, delta = 1, lower = -5, upper = 0)
 #' dbgev(x = 2, csi = 1, mu = 0, sigma = 1, delta = 2)
 #' curve(dbgev(x, csi = 1, mu = 0, sigma = 1, delta = 2), xlim = c(-1, 5))
@@ -23,7 +23,9 @@ dbgev <- function(x, csi, mu, sigma, delta){
 
   } else {
 
-    y <- (delta + 1) * (abs(x)^delta) * (1 + csi * (x * abs(x)^delta - mu / sigma))^(-(1 / csi) - 1) *
+    y <- (delta + 1) *
+      (abs(x)^delta) *
+      (1 + csi * (x * abs(x)^delta - mu / sigma))^(-(1 / csi) - 1) *
       exp(-(1 + csi * ((x * abs(x)^delta - mu / sigma)))^(-1 / csi))
 
     y <- ifelse(y < 0 | is.infinite(y) | is.na(y) | is.nan(y), 0, y)
