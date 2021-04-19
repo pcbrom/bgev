@@ -46,14 +46,19 @@ library(bgev)
 
 
 ``` r
-
+dbgev(x = 2, csi = 0, mu = 1, sigma = 1)
+curve(dbgev(x, csi = 0, mu = 1, sigma = 1), xlim = c(-5, 10), ylim= c(0, .4))
+integrate(dbgev, csi = 0, mu = 1, sigma = 1, lower = -5, upper = 0)
 ```
 
 
 ## Distribution Function
 
 ``` r
-
+pbgev(0, csi = 0, mu = 1, sigma = 1)
+integrate(dbgev, csi = 0, mu = 1, sigma = 1, lower = -Inf, upper = 0)
+pbgev(0, csi = 0, mu = 1, sigma = 1, lower.tail = FALSE)
+curve(pbgev(x, csi = 0, mu = 1, sigma = 1), xlim = c(-5, 10))
 ```
 
 
