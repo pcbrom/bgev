@@ -46,7 +46,11 @@ library(bgev)
 
 
 ``` r
-
+dbgev(x = 2, csi = 0, mu = 1, sigma = 1, delta = 1)
+curve(dbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
+integrate(dbgev, csi = 0, mu = 1, sigma = 1, delta = 1, lower = -5, upper = 0)
+dbgev(x = 2, csi = 1, mu = 0, sigma = 1, delta = 2)
+curve(dbgev(x, csi = 1, mu = 0, sigma = 1, delta = 2), xlim = c(-1, 5))
 ```
 
 
