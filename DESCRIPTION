@@ -24,6 +24,7 @@ Authors@R:
            email = "ciragotiniano@gmail.com",
            comment = c(ORCID = "https://orcid.org/0000-0002-5619-0478", Lattes = "http://lattes.cnpq.br/0307717595727716")))
 Description: Bimodal Generalized Extreme Value Distribution. General functions for performing extreme value analysis.
+Imports: bgumbel
 Maintainer: The package maintainer <pcbrom@gmail.com>
 License: MIT + file LICENSE
 Encoding: UTF-8
