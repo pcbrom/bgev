@@ -3,4 +3,4 @@
 export(dbgev)
 export(dgev)
 export(pgev)
-import(bgumbel)
+importFrom(bgumbel,dbgumbel)
