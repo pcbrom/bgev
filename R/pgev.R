@@ -14,12 +14,19 @@
 #' @export
 
 pgev <- function(q, csi, mu, sigma, lower.tail = TRUE) {
+
   if (csi == 0) {
+
     fda <- exp(-exp(-(q - mu) / sigma))
+
   } else {
+
     fda <- exp(-(1 + csi * (q - mu) / sigma)^(-1 / sigma))
+
   }
+
   fda <- ifelse(lower.tail, fda, 1 - fda)
+
   return(fda)
 }
 

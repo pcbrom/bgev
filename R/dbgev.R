@@ -1,15 +1,14 @@
 #' Bimodal Generalized Extreme Value: Density Function
 #'
-#' @param x Domain.
-#' @param csi Shape parameter.
-#' @param mu Location parameter.
-#' @param sigma Scale parameter.
-#' @param delta Second location parameter.
+#' @param x Domain, x in R.
+#' @param csi Shape parameter, csi != 0.
+#' @param mu Location parameter, mu in R.
+#' @param sigma Scale parameter, sigma > 0.
+#' @param delta Second location parameter, delta >= -1.
 #' @return Vector.
-#' @importFrom bgumbel dbgumbel
 #' @examples
-#' dbgev(x = 2, csi = 0, mu = 1, sigma = 1, delta = 1)
-#' curve(dbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
+#' dbgev(x = 2, csi = 1, mu = 1, sigma = 1, delta = 1)
+#' curve(dbgev(x, csi = -2, mu = -1, sigma = 1, delta = -.9), xlim = c(0, 10))
 #' integrate(dbgev, csi = 0, mu = 1, sigma = 1, delta = 1, lower = -5, upper = 0)
 #' dbgev(x = 2, csi = 1, mu = 0, sigma = 1, delta = 2)
 #' curve(dbgev(x, csi = 1, mu = 0, sigma = 1, delta = 2), xlim = c(-1, 5))
@@ -17,18 +16,23 @@
 
 dbgev <- function(x, csi, mu, sigma, delta){
 
-  if (csi == 0) {
+  if(csi != 0 & sigma > 0 & delta >= -1) {
 
-    y <- dbgumbel(x, mu = mu, sigma = sigma, delta = delta)
+    y <- sigma *
+      (delta + 1) *
+      abs(x)^delta *
+      (1 + csi * (sigma * x * abs(x)^delta - mu))^(-1 / csi - 1) *
+      exp(-(1 + csi * (sigma * x * abs(x)^delta - mu))^(-1 / csi))
+
+    # Temos problemas numericos para serem testados
+    # 1. Montar um grid com x, csi, mu, sigma, delta e avaliar os resultados NaN, Inf e -Inf
+    # 2. Criar uma regra de aproximação nas regioes inconsistentes de modo que a solucao seja numerica.
+    # 3. Avaliar se essa regra de aproximacao implica em algum problema matematico.
 
   } else {
 
-    y <- (delta + 1) *
-      (abs(x)^delta) *
-      (1 + csi * (x * abs(x)^delta - mu / sigma))^(-(1 / csi) - 1) *
-      exp(-(1 + csi * ((x * abs(x)^delta - mu / sigma)))^(-1 / csi))
-
-    y <- ifelse(y < 0 | is.infinite(y) | is.na(y) | is.nan(y), 0, y)
+    print("Undefined values! csi != 0 & sigma > 0 & delta >= -1")
+    return(NaN)
 
   }
 

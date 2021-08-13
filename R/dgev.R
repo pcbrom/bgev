@@ -12,12 +12,18 @@
 #' @export
 
 dgev <- function(x, csi, mu, sigma) {
+
   if (csi == 0) {
+
     fdp <- (1 / sigma) * exp(-(x - mu) / sigma - exp(-(x - mu) / sigma))
+
   } else {
+
     fdp <- ((1 / sigma) * (1 + csi * ((x - mu) / sigma))^(-(1 / csi) - 1)) *
       exp(-(1 + csi * ((x - mu) / sigma))^(-1 / csi))
+
   }
+
   return(fdp)
 }
 
