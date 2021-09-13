@@ -25,7 +25,7 @@ We propose a new model Bimodal Generalized Extreme value.
 You can install the released version of bgev from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("bgev")
+
 ```
 or using devtools
 
@@ -46,18 +46,17 @@ library(bgev)
 
 
 ``` r
-dbgev(x = 2, csi = 0, mu = 1, sigma = 1, delta = 1)
-curve(dbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
-integrate(dbgev, csi = 0, mu = 1, sigma = 1, delta = 1, lower = -5, upper = 0)
-dbgev(x = 2, csi = 1, mu = 0, sigma = 1, delta = 2)
-curve(dbgev(x, csi = 1, mu = 0, sigma = 1, delta = 2), xlim = c(-1, 5))
 ```
 
 
 ## Distribution Function
 
 ``` r
-
+pbgev(0, csi = 0, mu = 0, sigma = 1, delta = 2)
+pbgev(0, csi = 0, mu = 0, sigma = 1, delta = 2, lower.tail = FALSE)
+pbgev(0, csi = 1, mu = 2, sigma = 1, delta = 2)
+pbgev(0, csi = 1, mu = 2, sigma = 1, delta = 2, lower.tail = FALSE)
+curve(pbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
 ```
 
 

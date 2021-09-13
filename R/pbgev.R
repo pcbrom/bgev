@@ -7,40 +7,41 @@
 #' @param delta Second location parameter.
 #' @param lower.tail 	Logical; if TRUE (default), probabilities are P(X <= x) otherwise, P(X > x).
 #' @return Vector.
-#' @importFrom bgumbel pbgumbel
 #' @examples
 #' pbgev(0, csi = 0, mu = 0, sigma = 1, delta = 2)
 #' pbgev(0, csi = 0, mu = 0, sigma = 1, delta = 2, lower.tail = FALSE)
-#' pbgev(0, csi = 1, mu = 0, sigma = 1, delta = 2)
-#' pbgev(0, csi = 1, mu = 0, sigma = 1, delta = 2, lower.tail = FALSE)
-#' integrate(dbgev, csi = 0, mu = 0, sigma = 1, delta = 2, lower = -Inf, upper = 0)
-#' integrate(dbgev, csi = 1, mu = 0, sigma = 1, delta = 2, lower = -Inf, upper = 0)
+#' pbgev(0, csi = 1, mu = 2, sigma = 1, delta = 2)
+#' pbgev(0, csi = 1, mu = 2, sigma = 1, delta = 2, lower.tail = FALSE)
 #' curve(pbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
-#' curve(pbgev(x, csi = 1, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
 #' @export
 
 pbgev <- function(q, csi, mu, sigma, delta, lower.tail = TRUE) {
 
-  if (csi == 0) {
+  if (csi != 0 & sigma > 0 & delta >= -1) {
 
-    fda <- pbgumbel(q = q, mu = mu, sigma = sigma, delta = delta, lower.tail = lower.tail)
+    y <- sigma * q * abs(q)^delta
+
+    if (csi == 0) {
+
+      cdf <- exp(- exp(-(y - mu) / sigma))
+
+    } else {
+
+      cdf <- exp(-(1 + csi * ((y - mu) / sigma)^(-1 / csi)))
+
+    }
+
+    cdf <- ifelse(lower.tail, cdf, 1 - cdf)
 
   } else {
 
-    T.bg <- function(q, sigma, delta) sigma * q * abs(q)^delta
-
-    fda <- pgev(
-      q = T.bg(q = q, sigma = sigma, delta = delta),
-      csi = csi,
-      mu = mu,
-      sigma = sigma
-    )
-
-    fda <- ifelse(lower.tail, fda, 1 - fda)
+    print("Undefined values! csi != 0 & sigma > 0 & delta >= -1")
+    return(NaN)
 
   }
 
-  return(fda)
+  return(cdf)
+
 }
 
 pbgev <- Vectorize(pbgev, 'q')
