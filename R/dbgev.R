@@ -16,7 +16,7 @@
 
 dbgev <- function(x, csi, mu, sigma, delta){
 
-  if(csi != 0 & sigma > 0 & delta >= -1) {
+  if (csi != 0 & sigma > 0 & delta >= -1) {
 
     y <- sigma *
       (delta + 1) *
