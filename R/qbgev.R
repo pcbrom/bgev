@@ -30,7 +30,7 @@ qbgev <- function(p, csi, mu, sigma, delta) {
         (mu / sigma + ((-log(p))^(-csi) - 1) /
            (sigma * csi))^(1 / (delta + 1))
 
-      # problema:
+      # problema numerico:
       # (-1)^((2 + delta) / (1 + delta))
 
     }
