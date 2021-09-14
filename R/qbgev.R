@@ -6,7 +6,6 @@
 #' @param delta Second location parameter.
 #' @param initial Starting point of range in desired quantile.
 #' @param final Starting point of range in desired quantile.
-#' @param final Starting point of range in desired quantile.
 #' @return Vector.
 #' @examples
 #' curve(pbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 5))
