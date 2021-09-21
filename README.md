@@ -30,8 +30,7 @@ You can install the released version of bgev from [CRAN](https://CRAN.R-project.
 or using devtools
 
 ``` r
-library(devtools)
-install_github('pcbrom/bgev')
+devtools::install_git('https://github.com/pcbrom/bgev')
 ```
 
 
