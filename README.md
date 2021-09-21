@@ -64,7 +64,7 @@ library(bgev)
 ## Pseudo-Random Numbers Generator
 
 ``` r
-
+ 
 ```
 
 
