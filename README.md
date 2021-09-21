@@ -51,11 +51,6 @@ library(bgev)
 ## Distribution Function
 
 ``` r
-pbgev(0, csi = 0, mu = 0, sigma = 1, delta = 2)
-pbgev(0, csi = 0, mu = 0, sigma = 1, delta = 2, lower.tail = FALSE)
-pbgev(0, csi = 1, mu = 2, sigma = 1, delta = 2)
-pbgev(0, csi = 1, mu = 2, sigma = 1, delta = 2, lower.tail = FALSE)
-curve(pbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
 ```
 
 
