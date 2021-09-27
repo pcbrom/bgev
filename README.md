@@ -54,6 +54,9 @@ integrate(dbgev, csi = 1, mu = 1, sigma = 1, delta = 1, lower = -Inf, upper = In
 ## Distribution Function
 
 ``` r
+pbgev(2, csi = 1, mu = 2, sigma = 1, delta = 2)
+pbgev(2, csi = 1, mu = 2, sigma = 1, delta = 2, lower.tail = FALSE)
+curve(pbgev(x, csi = 1, mu = 2, sigma = 1, delta = 2), xlim = c(-1, 10))
 ```
 
 
