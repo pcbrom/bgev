@@ -12,7 +12,12 @@ Tinv <- function(x, sigma, delta) {
 
   if(delta >= -1 & sigma > 0) {
 
-    return(sign(x) * (abs(x) / sigma)^(1 / (delta + 1)))
+    if (x >= 0) {
+      y <- (x / sigma)^(1 / (delta + 1))
+    } else {
+      y <- -(-x / sigma)^(1 / (delta + 1))
+    }
+    return(y)
 
   } else {
 

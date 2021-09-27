@@ -26,7 +26,7 @@ Vector.
 Bimodal Generalized Extreme Value: Distribution Function
 }
 \examples{
-pbgev(0, csi = 1, mu = 2, sigma = 1, delta = 2)
-pbgev(0, csi = 1, mu = 2, sigma = 1, delta = 2, lower.tail = FALSE)
-curve(pbgev(x, csi = 1, mu = 2, sigma = 1, delta = 2), xlim = c(-5, 10))
+pbgev(2, csi = 1, mu = 2, sigma = 1, delta = 2)
+pbgev(2, csi = 1, mu = 2, sigma = 1, delta = 2, lower.tail = FALSE)
+curve(pbgev(x, csi = 1, mu = 2, sigma = 1, delta = 2), xlim = c(-1, 10))
 }
