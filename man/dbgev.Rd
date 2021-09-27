@@ -7,15 +7,15 @@
 dbgev(x, csi, mu, sigma, delta)
 }
 \arguments{
-\item{x}{Domain.}
+\item{x}{Domain, x in R.}
 
-\item{csi}{Shape parameter.}
+\item{csi}{Shape parameter, csi != 0.}
 
-\item{mu}{Location parameter.}
+\item{mu}{Location parameter, mu in R.}
 
-\item{sigma}{Scale parameter.}
+\item{sigma}{Scale parameter, sigma > 0.}
 
-\item{delta}{Second location parameter.}
+\item{delta}{Second location parameter, delta >= -1.}
 }
 \value{
 Vector.
@@ -24,9 +24,7 @@ Vector.
 Bimodal Generalized Extreme Value: Density Function
 }
 \examples{
-dbgev(x = 2, csi = 0, mu = 1, sigma = 1, delta = 1)
-curve(dbgev(x, csi = 0, mu = 0, sigma = 1, delta = 2), xlim = c(-5, 10))
-integrate(dbgev, csi = 0, mu = 1, sigma = 1, delta = 1, lower = -5, upper = 0)
-dbgev(x = 2, csi = 1, mu = 0, sigma = 1, delta = 2)
-curve(dbgev(x, csi = 1, mu = 0, sigma = 1, delta = 2), xlim = c(-1, 5))
+dbgev(x = -2, csi = -1, mu = 1, sigma = 1, delta = 1)
+curve(dbgev(x, csi = -1, mu = 1, sigma = 1, delta = 1), xlim = c(-3, 2))
+integrate(dbgev, csi = -1, mu = 1, sigma = 1, delta = 1, lower = -Inf, upper = Inf)
 }
