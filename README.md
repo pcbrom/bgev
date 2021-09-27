@@ -45,6 +45,9 @@ library(bgev)
 
 
 ``` r
+dbgev(x = 2, csi = 1, mu = 1, sigma = 1, delta = 1)
+curve(dbgev(x, csi = 1, mu = 1, sigma = 1, delta = 1), xlim = c(-1, 10))
+integrate(dbgev, csi = 1, mu = 1, sigma = 1, delta = 1, lower = -Inf, upper = Inf)
 ```
 
 

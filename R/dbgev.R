@@ -7,9 +7,9 @@
 #' @param delta Second location parameter, delta >= -1.
 #' @return Vector.
 #' @examples
-#' dbgev(x = -2, csi = -1, mu = 1, sigma = 1, delta = 1)
-#' curve(dbgev(x, csi = -1, mu = 1, sigma = 1, delta = 1), xlim = c(-3, 2))
-#' integrate(dbgev, csi = -1, mu = 1, sigma = 1, delta = 1, lower = -Inf, upper = Inf)
+#' dbgev(x = 2, csi = 1, mu = 1, sigma = 1, delta = 1)
+#' curve(dbgev(x, csi = 1, mu = 1, sigma = 1, delta = 1), xlim = c(-1, 10))
+#' integrate(dbgev, csi = 1, mu = 1, sigma = 1, delta = 1, lower = -Inf, upper = Inf)
 #' @export
 
 dbgev <- function(x, csi, mu, sigma, delta){
