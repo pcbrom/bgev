@@ -38,9 +38,8 @@ pbgev <- function(q, csi, mu, sigma, delta, lower.tail = TRUE) {
     }
   }
 
-  # cdf <- integrate(f = dbgev, csi = csi, mu = mu, sigma = sigma, delta = delta, lower = -Inf, upper = q)$value
-
   cdf <- ifelse(lower.tail, cdf, 1 - cdf)
+
   return(cdf)
 
 }
