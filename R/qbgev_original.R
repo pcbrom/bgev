@@ -21,9 +21,18 @@ qbgev <- function(p, csi, mu, sigma, delta, initial, final) {
 
   if (csi != 0 & sigma > 0 & delta >= -1) {
 
-    cte <- p
-    fx <- function(p) (pbgev(p, csi = csi, mu = mu, sigma = sigma, delta = delta) - cte)^2
-    yy <- optimise(f = fx, lower = initial, upper = final, maximum = FALSE)$minimum
+    index <- mu + ((-log(p))^(-csi) - 1) / csi
+    partial <- (mu / sigma + ((-log(p))^(-csi) - 1) / (sigma * csi) )^( 1 / (delta + 1))
+
+    if (index > 0) {
+
+      yy <- partial
+
+    } else {
+
+      yy <- ((-1)^((2 + delta) / (1 + delta))) * partial
+
+    }
 
   } else {
 
