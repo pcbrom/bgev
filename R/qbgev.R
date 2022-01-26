@@ -19,16 +19,15 @@ qbgev <- function(p, csi, mu, sigma, delta) {
   if (csi != 0 & sigma > 0 & delta >= -1) {
 
     index <- mu + ((-log(p))^(-csi) - 1) / csi
+    partial <- (mu / sigma + ((-log(p))^(-csi) - 1) / (sigma * csi) )^( 1 / (delta + 1))
 
     if (index > 0) {
 
-      yy <- (mu / sigma + ((-log(p))^(-csi) - 1) / (sigma * csi) )^( 1 / (delta + 1))
+      yy <- partial
 
     } else {
 
-      yy <- ((-1)^((2 + delta) / (1 + delta))) *
-        (mu / sigma + ((-log(p))^(-csi) - 1) /
-           (sigma * csi))^(1 / (delta + 1))
+      yy <- ((-1)^((2 + delta) / (1 + delta))) * partial
 
       # problema numerico:
       # (-1)^((2 + delta) / (1 + delta))
