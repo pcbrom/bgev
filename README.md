@@ -63,7 +63,12 @@ curve(pbgev(x, csi = 1, mu = 2, sigma = 1, delta = 2), xlim = c(-1, 10))
 ## Quantile Function
 
 ``` r
-
+curve(pbgev(x, csi = 1, mu = 2, sigma = 1, delta = 2), xlim = c(-5, 5))
+(value <- qbgev(p = .25, csi = 1, mu = 2, sigma = 1, delta = 2, initial = 1, final = 2))
+pbgev(value, csi = 1, mu = 2, sigma = 1, delta = 2)
+curve(pbgev(x, csi = .1, mu = 2, sigma = 1, delta = 2), xlim = c(-5, 5))
+(value <- qbgev(p = .5, csi = .1, mu = 2, sigma = 1, delta = 2, initial = 0, final = 3))
+pbgev(value, csi = .1, mu = 2, sigma = 1, delta = 2)
 ```
 
 
